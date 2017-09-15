@@ -1,6 +1,7 @@
 .DS_Store
 .DS_Store?
 *.txt
+*.exe
 a.out
 c.c
 IC

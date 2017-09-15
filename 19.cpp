@@ -17,12 +17,7 @@ int main()
 	{
 		serial[i] = (int)serial_num[i]-48;
 	}
-	cout<<"\n\n";
-	for(int i=0; i<9; i++)
-	{
-		cout<<serial[i];
-	}
-	
+		
 	// To check if a digit repeats itself 3 times.
 	for(int j=0; j<7; j++)
 	{

@@ -1,122 +1,54 @@
+/* Amit Bansal - @amitbansal7 */
 #include <bits/stdc++.h>
 using namespace std;
+bool ans;
 
-//all debug code is commented
+void solve(vector<vector<int> >A, int i, int j)
+{
+    if (i < 0 || j < 0 || i >= A.size() || j >= A[0].size() || A[i][j] == 0 || ans)
+        return;
 
-int n = 0,
-	x = 0,
-	y = 0,
-	con = 1,
-	a[20][20],
-	src[2] = {0},
-	l;
-
-void mv1();
-void mv2();
-void mv3();
-void mv4();
-
-void chk(){
-	if(a[x][y] == 2)
-		con = 0;
-	else if(a[x][y] == 1)
-		con = -1;
+    if (A[i][j] == 2)
+    {
+        ans = 1;
+        return;
+    }
+    A[i][j] = 0;
+    solve(A, i + 1, j);
+    solve(A, i - 1, j);
+    solve(A, i, j - 1);
+    solve(A, i, j + 1);
+    A[i][j] = 1;
 }
 
-void move(){
-	if(con != 1)
-		return;
+int main(int argc, char const *argv[])
+{
+    int t;
+    cin >> t;
 
-	switch(l){
-		case 1: mv2(); mv3(); mv4(); mv1(); break;
-		case 2: mv3(); mv4(); mv1(); mv2(); break;
-		case 3: mv4(); mv1(); mv2(); mv3(); break;
-		case 4: mv1(); mv2(); mv3(); mv4();
-	}
-}
+    while (t--)
+    {
+        int n;
+        cin >> n;
 
-void mv1(){
-	if(x + 1 < n && a[x + 1][y] != 0 && con == 1){
-		x++;
-		chk();
-		l = 2;
-		move();
-	}
-}
+        vector<vector<int> >A(n, vector<int>(n,0));
+        int a,b;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cin >> A[i][j];
+                if(A[i][j] == 1)
+                {
+                    a = i;
+                    b = j;
+                }
+            }
+        }
 
-void mv2(){
-	if(x > 0 && a[x - 1][y] != 0 && con == 1){
-		x--;
-		chk();
-		l = 1;
-		move();
-	}
-}
-
-void mv3(){
-	if(y + 1 < n && a[x][y + 1] != 0 && con == 1){
-		y++;
-		chk();
-		l = 4;
-		move();
-	}
-}
-
-void mv4(){
-	if(y > 0 && a[x][y - 1] != 0 && con == 1){
-		y--;
-		chk();
-		l = 3;
-		move();
-	}
-}
-
-int main(){
-	ios_base::sync_with_stdio(false);
-
-	int t = 0;
-	cin >> t;
-
-	while(t--){
-		x = 0;
-		y = 0;
-		con = 1;
-
-		cin >> n;
-		for(x = 0; x < n; x++){
-			for(y = 0; y < n; y++){
-				cin >> a[x][y];
-				if(a[x][y] == 1){
-					src[0] = x;
-					src[1] = y;
-				}
-			}
-		}
-
-/*		cout << "\n\nQuestion:";
-		for(x = 0; x < n; x++){
-			cout << "\n";
-			for(y = 0; y < n; y++)
-				cout << a[x][y] << " ";
-		}
-*/
-		x = src[0];
-		y = src[1];
-
-		for(int m = 1; m <= 4; m++){
-			con = 1;
-			l = m;
-			//cout << "\n" << l << " ";
-			move();
-			if(con == 0)
-				break;
-		}
-
-		if(con == 0)
-			cout << "1\n";
-		else
-			cout << "0\n";
-	}
-
-	return 0;
+        ans = 0;
+        solve(A, a, b);
+        cout << ans << endl;
+    }
+    return 0;
 }

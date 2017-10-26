@@ -3,7 +3,7 @@
 using namespace std;
 bool ans;
 
-void solve(vector<vector<int> >A, int i, int j)
+void solve(vector<vector<int> >&A, int i, int j)
 {
     if (i < 0 || j < 0 || i >= A.size() || j >= A[0].size() || A[i][j] == 0 || ans)
         return;

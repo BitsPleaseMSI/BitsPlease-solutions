@@ -49,11 +49,18 @@ for(i=x;i>=0;i--)
 //case 1: sum<10                 
 if(a[i]+b[i]<10)
 sum[i]+=a[i]+b[i];
-//case 2: sum>=10
+//case 2: sum>=10, i!=0
 else if(a[i]+b[i]>=10)
 {
 sum[i-1]+=1;
 sum[i]+=(a[i]+b[i])-10;
+}
+//case 3: sum>=10, i=0
+if(i==0&&(a[i]+b[i]>=10))
+{
+for(i=x;i>=0;i--)
+sum[i+1]=sum[i];
+sum[0]=1;
 }
 }
 

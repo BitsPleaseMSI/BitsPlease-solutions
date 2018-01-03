@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {  
-   int test_cases,step_covered,step_req,order_no,i;
+   int test_cases,step_covered,step_req,order_no;
    cin>>test_cases;
    while(test_cases)
    {
@@ -15,7 +15,7 @@ int main()
                             if(order_no%2==0) step_covered-=3;
                             if(order_no%2!=0) step_covered+=5;
                     }
-                    while(step_covered<step_req);
+                    while(step_covered<=step_req);
                     cout<<order_no<<endl;
                     test_cases--;
    }                         

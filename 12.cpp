@@ -16,7 +16,7 @@ int main()
                             if(order_no%2!=0) step_covered+=5;
                     }
                     while(step_covered<=step_req);
-                    cout<<order_no;
+                    cout<<order_no<<endl;
                     test_cases--;
    }                         
    return 0;

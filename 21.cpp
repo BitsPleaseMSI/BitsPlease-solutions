@@ -15,7 +15,8 @@ int main()
                                      sig=1;
                                      if(i==0)
                                      sig=0;
-                                     while((l_tow[j]<=l_tow[i])&&j>=0)
+                                     if(l_tow[j+1]<l_tow[i])
+                                     while((l_tow[j]<l_tow[i])&&j>=0)
                                      {
                                                               j--;
                                                               sig++;

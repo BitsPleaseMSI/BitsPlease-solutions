@@ -16,13 +16,14 @@ int main()
                                      if(i==0)
                                      sig=0;
                                      if(l_tow[j+1]<l_tow[i])
-                                     while((l_tow[j]<l_tow[i])&&j>=0)
+                                     while(j>=0)
                                      {
-                                                              j--;
-                                                              sig++;
+                                                sig++;
+                                                if(l_tow[j]>=l_tow[i])
+                                                break;
+                                                j--;                       
                                      }
-                                     cout<<sig<<" ";
-                                                              
+                                     cout<<sig<<" ";                                     
                   }
                   cout<<"\n";
                   t_cases--;

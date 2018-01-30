@@ -9,7 +9,7 @@ int main(void) {
 		scanf("%s", &A);
 		for(j=0; j<strlen(A); j++){
 			if(A[j]=='1'){
-				if(A[j+1]=='1'){
+				if((j+1) < 20 && A[j+1]=='1'){
 					for(k=j; A[k]!='0'; k++);
 					j=k;
 					count++;

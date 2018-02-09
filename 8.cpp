@@ -35,7 +35,7 @@ struct ListNode* RemoveMiddleNode(struct ListNode* head)
 		fast=fast->next->next;
 	}
 	prev->next=prev->next->next;
-	free(slow);
+	delete slow;
     return head;
 }
 

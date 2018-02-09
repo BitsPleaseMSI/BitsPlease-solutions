@@ -30,7 +30,7 @@ struct ListNode* RemoveMiddleNode(struct ListNode* head)
 
 	ListNode *prev, *slow, *fast;
 	slow=fast=head;
-	while(fast->next!=NULL) {
+	while(fast && fast->next!=NULL) {
 		prev=slow;
 		slow=slow->next;
 		fast=fast->next->next;

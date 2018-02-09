@@ -27,21 +27,15 @@ void PrintList(struct ListNode* head)
 
 struct ListNode* RemoveMiddleNode(struct ListNode* head)
 {
-  // Complete This function.
-	ListNode *ptr=head;
-  int i=1, count=1;
-  while(ptr!=NULL) { //counting number of nodes
-    ptr=ptr->next;
-    count++;
-  }
-  ptr=head;
-  while(i!=(count/2)-1) { //going till (mid-1)th node
-    ptr=ptr->next;
-    i++;
-  }
-  ListNode *x = ptr->next; 
-  ptr->next=ptr->next->next; //linking ptr to the next of ptr->next
-  free(x); 
+	ListNode *prev, *slow, *fast;
+	slow=fast=head;
+	while(fast!=NULL) {
+		prev=slow;
+		slow=slow->next;
+		fast=fast->next->next;
+	}
+	prev->next=prev->next->next;
+	free(slow);
     return head;
 }
 

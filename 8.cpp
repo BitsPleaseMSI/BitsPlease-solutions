@@ -27,6 +27,7 @@ void PrintList(struct ListNode* head)
 
 struct ListNode* RemoveMiddleNode(struct ListNode* head)
 {
+
 	ListNode *prev, *slow, *fast;
 	slow=fast=head;
 	while(fast->next!=NULL) {
@@ -36,6 +37,7 @@ struct ListNode* RemoveMiddleNode(struct ListNode* head)
 	}
 	prev->next=prev->next->next;
 	delete slow;
+
     return head;
 }
 

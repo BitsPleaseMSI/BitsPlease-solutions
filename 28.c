@@ -3,33 +3,76 @@
 int main(void) {
 	int a, b, n, d, l;
 	scanf("%d %d", &a, &b);
-	if(a==0) {
-		if(b==0) printf("Undefined.\n");
-		else printf("0\n");
-	}
-	else {
-		for(n=1; n<10; n++) {
-			d = a%n;
-			switch(d) {
-				case 1:
-				case 
-			}
-			if(d==1) printf("1\n");
-			else if(d==2) {
-				l = b%4;
-				if(l==1) printf("2\n");
-				else if(l==2) printf("4\n");
-				else if(l==3) printf("8\n");
-				else printf("6\n");
-			}
-			else if(d==3) {
-				l = b%4;
-				if(l==1) printf("3\n");
-				else if(l==2) printf("9\n");
-				else if(l==3) printf("7\n");
-				else printf("1\n");
-			}
-		}
+	d = a%10;
+	switch(d) {
+		case 0: if(b==0) printf("Undefined.\n");
+				else printf("0\n");
+				break;
+		case 1: printf("1\n");
+				break;
+		case 2: l = b%4;
+				switch(l) {
+					case 1: printf("2\n");
+							break;
+					case 2: printf("4\n");
+							break;
+					case 3: printf("8\n");
+							break;
+					default: printf("6\n");
+				}
+				break;
+		case 3: l = b%4;
+				switch(l) {
+					case 1: printf("3\n");
+							break;
+					case 2: printf("9\n");
+							break;
+					case 3: printf("7\n");
+							break;
+					default: printf("1\n");
+				}
+				break;
+		case 4: l = b%2;
+				switch(l) {
+					case 1: printf("4\n");
+							break;
+					default: printf("6\n");
+				}
+				break;
+		case 5: printf("5\n");
+				break;
+		case 6: printf("6\n");
+				break;
+		case 7: l = b%4;
+				switch(l) {
+					case 1: printf("7\n");
+							break;
+					case 2: printf("9\n");
+							break;
+					case 3: printf("3\n");
+							break;
+					default: printf("1\n");
+				}
+				break;
+		case 8: l = b%4;
+				switch(l) {
+					case 1: printf("8\n");
+							break;
+					case 2: printf("4\n");
+							break;
+					case 3: printf("2\n");
+							break;
+					default: printf("6\n");
+				}
+				break;
+		case 9: l = b%2;
+				switch(l) {
+					case 1: printf("9\n");
+							break;
+					default: printf("1\n");
+				}
+				break;
+		default: printf("Error.\n");
 	}
 	return 0;
 }

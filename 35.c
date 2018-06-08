@@ -4,7 +4,6 @@
 #define MAXSIZE 5  //size of matrix can be changed from here
 
 void Enter(int A[][MAXSIZE], int);
-void Show(int A[][MAXSIZE], int);
 int detA(int A[][MAXSIZE], int);
 void Minor(int A[][MAXSIZE], int M[][MAXSIZE], int, int, int);
 

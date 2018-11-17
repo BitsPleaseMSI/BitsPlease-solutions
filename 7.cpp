@@ -15,10 +15,9 @@ void Mark (int List[], int N, int &prime) {
 }
 
 int FindNextPrime (int List[], int N, int &prime) {
-	for (int i = (prime + 1); i < N; i++) {
+	for (int i = (prime + 1); i < N; i++) 
 		if (List[i] > prime && List[i] != 0) 
 			return List[i];
-	}
 	return -1;
 }
 
@@ -31,10 +30,8 @@ void PrintPrimes (int &L, int &U) {
 		prime = FindNextPrime (List, (U + 1), prime);
 	}while (prime > 0);
 	List[0] = List[1] = 0;
-	for (int i = L; i <= U; i++) {
+	for (int i = L; i <= U; i++) 
 		if (List[i] != 0) cout << List[i] << " ";
-		else continue;
-	}
 }
 
 int main () {

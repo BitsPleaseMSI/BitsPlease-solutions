@@ -1,5 +1,4 @@
 # include <iostream>
-# include <conio.h>
 
 using std::cin;
 using std::cout;
@@ -46,6 +45,5 @@ int main () {
 		PrintPrimes (x, y);
 		cout << endl;
 	}
-	getch ();
 	return 0;
 }

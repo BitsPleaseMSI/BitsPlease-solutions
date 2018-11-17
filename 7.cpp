@@ -31,7 +31,7 @@ void PrintPrimes (int &L, int &U) {
 		prime = FindNextPrime (List, (U + 1), prime);
 	}while (prime > 0);
 	List[0] = List[1] = 0;
-	for (int i = L; i < U; i++) {
+	for (int i = L; i <= U; i++) {
 		if (List[i] != 0) cout << List[i] << " ";
 		else continue;
 	}

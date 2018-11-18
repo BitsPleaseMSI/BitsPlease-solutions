@@ -32,6 +32,7 @@ void PrintPrimes (int &L, int &U) {
 	List[0] = List[1] = 0;
 	for (int i = L; i <= U; i++) 
 		if (List[i] != 0) cout << List[i] << " ";
+	delete []List;
 }
 
 int main () {

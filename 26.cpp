@@ -1,30 +1,23 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
-    int n,i,k,j,test_cases;
-    cin>>test_cases;
-    while(test_cases)
+    int n,m;
+    cin>>n;
+    if(n%2==0)
+        m=2*n+1;
+    else
+        m=2*n-1;
+    for(int i=1;i<=n;i++)
     {
-               cin>>n;
-               for(i=0;i<n;i++)
-               {
-                    for(j=0;j<i;j++)
-                    cout<<"0";
-                    cout<<"*";
-                    for(k=0;k<2;k++)
-                    {
-                                    for(j=i+1;j<n;j++)
-                                    cout<<"0";
-                                    cout<<"*";
-                    }
-                    for(j=0;j<i;j++)
-                    cout<<"0";
-                    cout<<"\n";
-               }
-               cout<<"\n";
-               test_cases--;
+        for(int j=1;j<=m;j++)
+        {
+            if(i==j || j==(m+1)/2 || i+j-1==m )
+                cout<<"*";
+            else
+                  cout<<0;
+        }
+    cout<<endl;
     }
     return 0;
 }
-    

@@ -3,7 +3,6 @@
 using namespace std;
 int main()
 {
-    cout<<"Enter your commands(<,>,V,^) without spaces"<<endl;
     string directions;
     int str_size,msize,mid_x,mid_y,x=0,y=0,total=0;
     getline(cin,directions);
@@ -18,9 +17,9 @@ int main()
     for(int i=0;i<msize;i++)
     {
         if(directions[i]=='<')
-        y++;
-        else if(directions[i]=='>')
         y--;
+        else if(directions[i]=='>')
+        y++;
         else if(directions[i]=='^')
         x--;
         else if(directions[i]=='V')

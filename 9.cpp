@@ -17,9 +17,9 @@ int main()
     for(int i=0;i<msize;i++)
     {
         if(directions[i]=='<')
-        y++;
-        else if(directions[i]=='>')
         y--;
+        else if(directions[i]=='>')
+        y++;
         else if(directions[i]=='^')
         x--;
         else if(directions[i]=='V')

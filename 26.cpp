@@ -2,6 +2,11 @@
 using namespace std;
 int main()
 {
+    int cases;
+    cin>>cases;
+    while(cases!=0)
+    {
+    cases--;
     int n,m;
     cin>>n;
     if(n%2==0)
@@ -15,9 +20,10 @@ int main()
             if(i==j || j==(m+1)/2 || i+j-1==m )
                 cout<<"*";
             else
-                  cout<<0;
+                cout<<0;
         }
     cout<<endl;
+    }
     }
     return 0;
 }

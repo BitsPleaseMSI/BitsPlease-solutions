@@ -3,3 +3,5 @@
 - **Make changes** in that branch.
 - Push your branch to remote.
 - **Create a pull request** from the remote branch.
+
+Please create one individual pull request for each solution.

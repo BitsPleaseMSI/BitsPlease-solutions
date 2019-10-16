@@ -6,6 +6,7 @@ int cases,cases1;
 cin>>cases;
 cases1=cases;
 int ar[cases];
+
 while(cases1!=0)
 {
     string input_string;
@@ -21,6 +22,7 @@ while(cases1!=0)
     ar[cases-cases1]=leng-flag;
     cases1--;
 }
+
 for(int i=0;i<cases;i++)
     cout<<ar[i]<<endl;
 return 0;
